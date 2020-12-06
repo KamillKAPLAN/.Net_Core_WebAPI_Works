@@ -16,8 +16,4 @@
     <ProjectReference Include="..\HotelFinder.Entities\HotelFinder.Entities.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Concrete_somut\" />
-  </ItemGroup>
-
 </Project>

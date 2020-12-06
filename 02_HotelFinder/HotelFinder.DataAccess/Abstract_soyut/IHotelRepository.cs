@@ -1,7 +1,7 @@
 ﻿using HotelFinder.Entities;
 using System.Collections.Generic;
 
-namespace HotelFinder.DataAccess.Abstract_soyut
+namespace HotelFinder.DataAccess.Abstract
 {
     public interface IHotelRepository
     {
