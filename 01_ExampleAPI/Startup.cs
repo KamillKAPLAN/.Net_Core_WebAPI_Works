@@ -11,6 +11,7 @@ namespace ExampleAPI
         /* Ýhtiyaç duyduðumuz service'lerimizi ekleriz. */
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers(); /* Controller service'ini ekliyoruz. */
         }
 
         /* HTTP request pipeline 'larýmýzý yönetiriz. */
@@ -34,12 +35,19 @@ namespace ExampleAPI
 
             app.UseEndpoints(endpoints =>
             {
+                /*
                 endpoints.MapGet("/", async context =>
                 {
                     await context.Response.WriteAsync("<div style='text-align: center; color: chocolate; border: 1px solid red; padding: 1 %; '>" +
                                                          "KAMIL KAPLAN" +
                                                       "</div>");
                 });
+                */
+
+                /* Endpoint'lerimizi yani route'larýmýzý ConfigureService'e 
+                 * eklemiþ olduðumuz controller'larýmýz aracýlýðý ile oluþturmak için 
+                 */
+                endpoints.MapControllers();
             });
         }
     }
