@@ -14,6 +14,15 @@ namespace _01_ExampleAPI
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            /* Static dosya için wwroot klasörü kullanýlýr.
+             * Uygulama içinde olmadýðý için sýfýrdan kurmak gereklidir.
+             * wwwroot klasörünü aktive etmek için Startup.cs dosyasýna Configure metodu içine aþaðýdaki kod satýrlarý eklenýr.
+             * app.UseDefaultFiles();
+             * app.UseStaticFiels();
+             */
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

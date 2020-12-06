@@ -44,7 +44,6 @@ Ben [`Kamil KAPLAN`][medium] medium adresimde **.NET CORE WEB API - NOTLAR** üz
 - `[Route("api/[controller]")]` : URL kısmının yolunu belirler, `https://localhost:5001/api/values` controller 'ın ismi
 - `[ApiController]` : niteliği, Web API isteklerine cevap vereceğini gösterir.
 
-----
 
 - `[HttpGet]` : GET api/values 
 - `[HttpGet("{id}")]` : GET api/values/5
