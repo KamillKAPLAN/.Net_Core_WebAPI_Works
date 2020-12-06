@@ -12,12 +12,14 @@ namespace ExampleAPI.Controllers
         private List<User> _users = FakeData.GetUsers(200);
 
         [HttpGet]
+        /* api/users */
         public List<User> Get()
         {
             return _users;
         }
 
         [HttpGet("{id}")]
+        /* api/users/12 */
         public User Get(int id)
         {
             var user = _users.FirstOrDefault(x => x.Id == id);
@@ -25,6 +27,7 @@ namespace ExampleAPI.Controllers
         }
 
         [HttpPost]
+        /* api/users */
         public User Post([FromBody] User user)
         {
             user.Id = _users.Count() + 1;
@@ -33,6 +36,7 @@ namespace ExampleAPI.Controllers
         }
 
         [HttpPut]
+        /* api/users */
         public User Put([FromBody] User user)
         {
             var editedUser = _users.FirstOrDefault(x => x.Id == user.Id);
@@ -43,6 +47,7 @@ namespace ExampleAPI.Controllers
         }
 
         [HttpDelete("{id}")]
+        /* api/users/12 */
         public string Delete(int id)
         {
             var deletedUser = _users.FirstOrDefault(x => x.Id == id);

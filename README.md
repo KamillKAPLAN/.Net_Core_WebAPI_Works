@@ -4,39 +4,52 @@ Ben [`Kamil KAPLAN`][medium] medium adresimde **.NET CORE WEB API - NOTLAR** üz
 
 ```sh
     [Route("api/[controller]")]
-    [ApiController]
-    public class ValuesController : ControllerBase
+    public class UsersController : ControllerBase
     {
-        // GET api/values
+        private List<User> _users = FakeData.GetUsers(200);
+
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        /* api/users */
+        public List<User> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _users;
         }
- 
-        // GET api/values/5
+
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        /* api/users/12 */
+        public User Get(int id)
         {
-            return "value";
+            var user = _users.FirstOrDefault(x => x.Id == id);
+            return user;
         }
- 
-        // POST api/values
+
         [HttpPost]
-        public void Post([FromBody] string value)
+        /* api/users */
+        public User Post([FromBody] User user)
         {
+            user.Id = _users.Count() + 1;
+            _users.Add(user);
+            return user;
         }
- 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+
+        [HttpPut]
+        /* api/users */
+        public User Put([FromBody] User user)
         {
+            var editedUser = _users.FirstOrDefault(x => x.Id == user.Id);
+            editedUser.FirstName = user.FirstName;
+            editedUser.LastName = user.LastName;
+            editedUser.Address = user.Address;
+            return user;
         }
- 
-        // DELETE api/values/5
+
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        /* api/users/12 */
+        public string Delete(int id)
         {
+            var deletedUser = _users.FirstOrDefault(x => x.Id == id);
+            _users.Remove(deletedUser);
+            return $"{id} nolu {deletedUser.FirstName} silme işlemi başasılı";
         }
     }
 ```
@@ -46,11 +59,11 @@ Ben [`Kamil KAPLAN`][medium] medium adresimde **.NET CORE WEB API - NOTLAR** üz
 
 ---
 
-- `[HttpGet]` : GET api/values 
-- `[HttpGet("{id}")]` : GET api/values/5
-- `[HttpPost]` : POST api/values
-- `[HttpPut("{id}")]` : PUT api/values/5
-- `[HttpDelete("{id}")]` : DELETE api/values/5
+- `[HttpGet]` : GET api/users 
+- `[HttpGet("{id}")]` : GET api/users/5
+- `[HttpPost]` : POST api/users
+- `[HttpPut("{id}")]` : PUT api/users
+- `[HttpDelete("{id}")]` : DELETE api/users/5
 
 **Bu arada hızlı işlemler için memory kullanmak iyi bir çözümdür.**
 
