@@ -44,6 +44,7 @@ Ben [`Kamil KAPLAN`][medium] medium adresimde **.NET CORE WEB API - NOTLAR** üz
 - `[Route("api/[controller]")]` : URL kısmının yolunu belirler, `https://localhost:5001/api/values` controller 'ın ismi
 - `[ApiController]` : niteliği, Web API isteklerine cevap vereceğini gösterir.
 
+---
 
 - `[HttpGet]` : GET api/values 
 - `[HttpGet("{id}")]` : GET api/values/5
@@ -60,17 +61,19 @@ Ben [`Kamil KAPLAN`][medium] medium adresimde **.NET CORE WEB API - NOTLAR** üz
  * Uygulama içinde olmadığı için sıfırdan kurmak gereklidir.
  * wwwroot klasörünü aktive etmek için Startup.cs dosyasına Configure metodu içine aşağıdaki kod satırları eklenır.
     * app.UseDefaultFiles();
-    * app.UseStaticFiels();
+    * app.UseStaticFiles();
+ * Static sayfaların kullanımı ile ilgili daha fazla detay da var. Şu adrese(https://docs.microsoft.com/en-us/aspnet/core/fundamentals/static-files?view=aspnetcore-5.0) bakmanızı öneririm
  */
 ```
 
-- Eğer bir Web API uygulaması geliştiriyorsanız, farklı metotları üretmek bir geliştirici için zordur. **Swagger (OpenAPI)** problemi çözmek için iyi dokümanlara sahip ve yardım sayfaları olan iyi bir çözümdür. Bu uygulama bir .Net Core çözümü değildir. Ancak, Swashbuckle.AspNetCore ve NSwag projeleri ASP.NET Core Web API’leri için dokümantasyon üretmek için açık kaynak kodlu olarak Swagger uygulamasının kullanıma olanak sağlar.
+- Eğer bir Web API uygulaması geliştiriyorsanız, farklı metotları üretmek bir geliştirici için zordur. **Swagger (OpenAPI)** problemi çözmek için iyi dokümanlara sahip ve yardım sayfaları olan iyi bir çözümdür. Bu uygulama bir .Net Core çözümü değildir. Ancak, [Swashbuckle][swagger].AspNetCore ve NSwag projeleri ASP.NET Core Web API’leri için dokümantasyon üretmek için açık kaynak kodlu olarak Swagger uygulamasının kullanıma olanak sağlar.
 
 **KAMIL KAPLAN - SOFTWARE ENGINEER**
 
 [//]: # (Gizli alan)
 
  [medium]: <https://medium.com/@kamilkaplnnr>
+ [swagger]: <https://swagger.io/>
 
 
 
