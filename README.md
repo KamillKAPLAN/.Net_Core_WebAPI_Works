@@ -66,6 +66,8 @@ Ben [`Kamil KAPLAN`][medium] medium adresimde **.NET CORE WEB API - NOTLAR** üz
  */
 ```
 
+- **Bogus kütüphanesi** kullanılarak Fake Data üretimi yapılmaktadır.
+
 - Eğer bir Web API uygulaması geliştiriyorsanız, farklı metotları üretmek bir geliştirici için zordur. **Swagger (OpenAPI)** problemi çözmek için iyi dokümanlara sahip ve yardım sayfaları olan iyi bir çözümdür. Bu uygulama bir .Net Core çözümü değildir. Ancak, [Swashbuckle][swagger].AspNetCore ve NSwag projeleri ASP.NET Core Web API’leri için dokümantasyon üretmek için açık kaynak kodlu olarak Swagger uygulamasının kullanıma olanak sağlar.
 
 **KAMIL KAPLAN - SOFTWARE ENGINEER**

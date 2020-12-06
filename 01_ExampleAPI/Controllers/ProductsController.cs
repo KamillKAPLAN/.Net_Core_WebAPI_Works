@@ -11,7 +11,7 @@ namespace ExampleAPI.Controllers
     {
         [Route("hello")]
         public string Hello() { return "Hello"; }
-        
+
         [Route("hi")]
         public string Hi() { return "Hi"; }
     }
