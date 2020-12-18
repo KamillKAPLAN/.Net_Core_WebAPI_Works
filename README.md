@@ -2,6 +2,8 @@
 
 Ben [`Kamil KAPLAN`][medium] medium adresimde **.NET CORE WEB API - NOTLAR** üzerine bir makale yazdım orayada bakmanızı öneririm.
 
+## 01_ExampleAPI
+
 ```sh
     [Route("api/[controller]")]
     public class UsersController : ControllerBase
@@ -82,6 +84,18 @@ Ben [`Kamil KAPLAN`][medium] medium adresimde **.NET CORE WEB API - NOTLAR** üz
 - **Bogus kütüphanesi** kullanılarak Fake Data üretimi yapılmaktadır.
 
 - Eğer bir Web API uygulaması geliştiriyorsanız, farklı metotları üretmek bir geliştirici için zordur. **Swagger (OpenAPI)** problemi çözmek için iyi dokümanlara sahip ve yardım sayfaları olan iyi bir çözümdür. Bu uygulama bir .Net Core çözümü değildir. Ancak, [Swashbuckle][swagger].AspNetCore ve NSwag projeleri ASP.NET Core Web API’leri için dokümantasyon üretmek için açık kaynak kodlu olarak Swagger uygulamasının kullanıma olanak sağlar.
+
+## 02_HotelFinder
+
+- **Entity Katmanı** : bizim database'deki tablolara karşılık gelen C# class'larımızı tutuğumuz katmandır.
+- **Data Access Katmanı** : veri erişim katmanı, burada entity framework implemantasyonu yapılır.
+   * Microsoft.EntityFrameworkCore.SqlServer installed
+   * Microsoft.EntityFrameworkCore.Tools     installed : migration'ları kullanabilmek için projeye dahil ettik.
+   * **Package Manager Console**
+   * ``` PM> add-migration initialCreate ``` 
+   * ``` PM> update-database ``` 
+- **Business Katmanı** : burası iş kurallarımızı yazdığımız katmandır.
+- **WebAPI Katmanı**
 
 **KAMIL KAPLAN - SOFTWARE ENGINEER**
 
